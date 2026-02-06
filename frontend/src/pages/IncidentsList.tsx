@@ -1,7 +1,9 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useIncidents } from '../hooks/useIncidents';
 import { useServices } from '../hooks/useServices';
 import { formatDate } from '../lib/utils';
-import { Incident } from '../types';
+import type { Incident } from '../types';  // Add 'type' here
 
 const ORG_ID = 'cmlahot3g0000109tmyku278d';
 

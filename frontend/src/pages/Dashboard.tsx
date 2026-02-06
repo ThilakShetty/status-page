@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useServices } from '../hooks/useServices';
 import { getServiceStatusText } from '../lib/utils';
-import type { Service } from '../types';  // Add 'type' here
+import type { Service } from '../types';
 
 // Hardcoded org ID for now (replace with context later)
 const ORG_ID = 'cmlahot3g0000109tmyku278d';

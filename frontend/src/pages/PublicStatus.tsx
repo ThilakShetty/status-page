@@ -5,11 +5,16 @@ import type { PublicStatusResponse } from '../types';  // Add 'type' here
 import { getServiceStatusText, formatDate } from '../lib/utils';
 
 export default function PublicStatus() {
-  const { slug } = useParams();
+    const { slug } = useParams<{ slug: string }>();  // Add type here
   const [data, setData] = useState<PublicStatusResponse | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!slug) {
+      console.error('No slug provided');
+      setLoading(false);
+      return;
+    }
     fetchStatus();
     // Refresh every 30 seconds
     const interval = setInterval(fetchStatus, 30000);
